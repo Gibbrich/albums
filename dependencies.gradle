@@ -18,7 +18,7 @@ ext {
 
     daggerVersion = '2.13'
 
-    roomVersion = "2.0.0"
+    roomVersion = "1.1.1"
 }
 
 ext.app = [
@@ -37,7 +37,7 @@ ext.app = [
 
         gson                   : "com.google.code.gson:gson:$gsonVersion",
 
-        room                   : "androidx.room:room-runtime:$roomVersion",
-        roomCompiler           : "androidx.room:room-compiler:$roomVersion",
-        roomRxAdapter          : "androidx.room:room-rxjava2:$roomVersion",
+        room                   : "android.arch.persistence.room:runtime:$roomVersion",
+        roomCompiler           : "android.arch.persistence.room:compiler:$roomVersion",
+        roomRxAdapter          : "android.arch.persistence.room:rxjava2:$roomVersion",
 ]

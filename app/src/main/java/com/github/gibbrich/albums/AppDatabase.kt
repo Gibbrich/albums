@@ -1,7 +1,8 @@
 package com.github.gibbrich.albums
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
+import android.arch.persistence.room.Database
+import android.arch.persistence.room.RoomDatabase
+
 
 @Database(entities = [
     DBAlbum::class

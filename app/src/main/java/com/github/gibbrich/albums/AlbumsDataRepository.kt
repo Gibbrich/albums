@@ -13,10 +13,6 @@ class AlbumsDataRepository(
             Single.just(cachedAlbums)
         }
 
-        isCacheDirty -> {
-            getAndSaveRemoteAlbums()
-        }
-
         else -> {
             getAndCacheLocalAlbums()
         }
@@ -26,6 +22,13 @@ class AlbumsDataRepository(
         db.albumDao()
             .getOrders()
             .map { it.map(AlbumConverter::fromDB) }
+            .flatMap {
+                if (it.isEmpty()) {
+                    getAndSaveRemoteAlbums()
+                } else {
+                    Single.just(it)
+                }
+            }
             .doOnSuccess(this::refreshCache)
 
     private fun getAndSaveRemoteAlbums(): Single<List<Album>> =

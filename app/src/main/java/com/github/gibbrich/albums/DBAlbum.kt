@@ -1,12 +1,10 @@
 package com.github.gibbrich.albums
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
 
-@Entity(tableName = "Album")
+@Entity(tableName = "Album", primaryKeys = ["id", "user_id"])
 data class DBAlbum(
-    @PrimaryKey
     val id: Long,
 
     @ColumnInfo(name = "user_id")

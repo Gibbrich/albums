@@ -1,12 +1,12 @@
 package com.github.gibbrich.albums
 
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 
 abstract class ConstantValueAdapter<T, VH : RecyclerView.ViewHolder>(
-    val items: List<T>
+    private val items: MutableList<T>
 ) : RecyclerView.Adapter<VH>() {
 
     final override fun getItemCount() = items.size
@@ -24,4 +24,10 @@ abstract class ConstantValueAdapter<T, VH : RecyclerView.ViewHolder>(
     }
 
     abstract fun bind(holder: VH, item: T, position: Int)
+
+    fun replaceData(data: List<T>) {
+        items.clear()
+        items.addAll(data)
+        notifyDataSetChanged()
+    }
 }

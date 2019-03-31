@@ -1,11 +1,11 @@
 package com.github.gibbrich.albums
 
+import android.support.v7.widget.RecyclerView
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.layout_item_album.view.*
 
 class AlbumsAdapter(
-    albums: List<Album>
+    albums: MutableList<Album> = mutableListOf()
 ) : ConstantValueAdapter<Album, AlbumsAdapter.Holder>(albums) {
     override fun createHolder(view: View): Holder = Holder(view)
 

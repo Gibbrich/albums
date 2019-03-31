@@ -1,5 +1,6 @@
 package com.github.gibbrich.albums.di.component
 
+import com.github.gibbrich.albums.AlbumsViewModel
 import com.github.gibbrich.albums.MainActivity
 import com.github.gibbrich.albums.di.module.AlbumsModule
 import dagger.Subcomponent
@@ -8,7 +9,7 @@ import dagger.Subcomponent
     AlbumsModule::class
 ])
 interface AlbumsComponent {
-    fun inject(entry: MainActivity)
+    fun inject(entry: AlbumsViewModel)
 
     @Subcomponent.Builder
     interface Builder {
