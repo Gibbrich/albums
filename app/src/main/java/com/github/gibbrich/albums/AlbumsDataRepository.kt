@@ -27,9 +27,9 @@ class AlbumsDataRepository(
                     getAndSaveRemoteAlbums()
                 } else {
                     Single.just(it)
+                        .doOnSuccess(this::refreshCache)
                 }
             }
-            .doOnSuccess(this::refreshCache)
 
     private fun getAndSaveRemoteAlbums(): Single<List<Album>> =
         api.getAlbums()
