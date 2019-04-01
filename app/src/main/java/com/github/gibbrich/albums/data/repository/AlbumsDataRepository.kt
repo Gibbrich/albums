@@ -1,5 +1,10 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.data.repository
 
+import com.github.gibbrich.albums.domain.model.Album
+import com.github.gibbrich.albums.domain.repository.AlbumsRepository
+import com.github.gibbrich.albums.data.converter.AlbumConverter
+import com.github.gibbrich.albums.data.network.Api
+import com.github.gibbrich.albums.data.db.AppDatabase
 import io.reactivex.Single
 
 class AlbumsDataRepository(

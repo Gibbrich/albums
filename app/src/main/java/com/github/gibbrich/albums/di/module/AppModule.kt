@@ -2,7 +2,7 @@ package com.github.gibbrich.albums.di.module
 
 import android.arch.persistence.room.Room
 import android.content.Context
-import com.github.gibbrich.albums.AppDatabase
+import com.github.gibbrich.albums.data.db.AppDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -1,6 +1,10 @@
 package com.github.gibbrich.albums.di.module
 
-import com.github.gibbrich.albums.*
+import com.github.gibbrich.albums.data.repository.AlbumsDataRepository
+import com.github.gibbrich.albums.data.db.AppDatabase
+import com.github.gibbrich.albums.data.network.Api
+import com.github.gibbrich.albums.domain.repository.AlbumsRepository
+import com.github.gibbrich.albums.domain.usecase.AlbumsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable

@@ -1,4 +1,4 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.ui.activity
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import com.github.gibbrich.albums.R
+import com.github.gibbrich.albums.ui.adapter.AlbumsAdapter
+import com.github.gibbrich.albums.ui.viewmodel.AlbumsViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

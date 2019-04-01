@@ -1,4 +1,4 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.data.db.model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity

@@ -1,10 +1,12 @@
 package com.github.gibbrich.albums
 
 import android.arch.persistence.room.Room
-import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
+import com.github.gibbrich.albums.data.db.AppDatabase
+import com.github.gibbrich.albums.data.db.dao.AlbumDao
+import com.github.gibbrich.albums.data.db.model.DBAlbum
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

@@ -1,8 +1,11 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.ui.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import com.github.gibbrich.albums.di.DI
+import com.github.gibbrich.albums.domain.model.Album
+import com.github.gibbrich.albums.domain.usecase.AlbumsUseCase
+import com.github.gibbrich.albums.domain.utils.schedulersIoToMain
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.domain.utils
 
 import io.reactivex.Observable
 import io.reactivex.Single

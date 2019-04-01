@@ -1,4 +1,4 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.data.network.model
 
 import com.google.gson.annotations.SerializedName
 

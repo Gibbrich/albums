@@ -1,6 +1,6 @@
 package com.github.gibbrich.albums.di.module
 
-import com.github.gibbrich.albums.Api
+import com.github.gibbrich.albums.data.network.Api
 import com.github.gibbrich.albums.BuildConfig
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module

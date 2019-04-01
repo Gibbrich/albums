@@ -1,5 +1,6 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.domain.repository
 
+import com.github.gibbrich.albums.domain.model.Album
 import io.reactivex.Single
 
 interface AlbumsRepository {

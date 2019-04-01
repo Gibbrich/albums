@@ -1,5 +1,6 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.data.network
 
+import com.github.gibbrich.albums.data.network.model.NWAlbum
 import io.reactivex.Single
 import retrofit2.http.GET
 

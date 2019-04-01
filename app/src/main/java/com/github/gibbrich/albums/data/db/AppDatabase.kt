@@ -1,7 +1,9 @@
-package com.github.gibbrich.albums
+package com.github.gibbrich.albums.data.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
+import com.github.gibbrich.albums.data.db.dao.AlbumDao
+import com.github.gibbrich.albums.data.db.model.DBAlbum
 
 
 @Database(entities = [
