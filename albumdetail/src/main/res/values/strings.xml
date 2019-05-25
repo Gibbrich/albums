@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AlbumDetail</string>
+
+    <string name="activity_album_detail">Something went wrong during fetching</string>
+</resources>

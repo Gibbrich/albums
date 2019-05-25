@@ -1,13 +1,12 @@
 package com.github.gibbrich.albums.di
 
-import android.app.Application
+import com.github.gibbrich.data.di.DI
 
 object DI {
-    private lateinit var componentManager: ComponentManager
-
-    fun init(context: Application) {
-        componentManager = ComponentManager(context)
+    val albumsComponent: AlbumsComponent by lazy {
+        DaggerAlbumsComponent
+            .builder()
+            .dataComponent(DI.dataComponent)
+            .build()
     }
-
-    fun componentManager(): ComponentManager = componentManager
 }

@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
 import com.github.gibbrich.albums.R
-import com.github.gibbrich.albums.domain.model.Album
+import com.github.gibbrich.core.model.Album
 import kotlinx.android.synthetic.main.layout_item_album.view.*
 
 class AlbumsAdapter(
