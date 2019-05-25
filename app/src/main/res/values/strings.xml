@@ -3,4 +3,6 @@
 
     <string name="activity_main_error_occured">Oops!\nAn error occurred\nTry again later</string>
     <string name="activity_main_no_data">No data</string>
+
+    <string name="activity_album_detail">Something went wrong during fetching</string>
 </resources>

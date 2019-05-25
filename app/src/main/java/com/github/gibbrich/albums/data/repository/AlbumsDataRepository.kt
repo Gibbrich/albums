@@ -23,6 +23,11 @@ class AlbumsDataRepository(
         }
     }
 
+    override fun getAlbum(albumId: Long): Single<Album> {
+        return api.getAlbum(albumId)
+            .map(AlbumConverter::fromNetwork)
+    }
+
     private fun getAndCacheLocalAlbums(): Single<List<Album>> =
         db.albumDao()
             .getOrders()

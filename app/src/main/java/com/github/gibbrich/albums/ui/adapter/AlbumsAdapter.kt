@@ -8,7 +8,8 @@ import com.github.gibbrich.albums.domain.model.Album
 import kotlinx.android.synthetic.main.layout_item_album.view.*
 
 class AlbumsAdapter(
-    albums: MutableList<Album> = mutableListOf()
+    albums: MutableList<Album> = mutableListOf(),
+    private val onAlbumClicked: (Long) -> Unit
 ) : ConstantValueAdapter<Album, AlbumsAdapter.Holder>(albums) {
     override fun createHolder(view: View): Holder =
         Holder(view, view.layout_item_album_title, view.layout_item_album_id)
@@ -18,6 +19,7 @@ class AlbumsAdapter(
     override fun bind(holder: Holder, item: Album, position: Int) {
         holder.titleView.text = item.title
         holder.idView.text = (position + 1).toString()
+        holder.itemView.setOnClickListener { onAlbumClicked.invoke(item.id) }
     }
 
     class Holder(

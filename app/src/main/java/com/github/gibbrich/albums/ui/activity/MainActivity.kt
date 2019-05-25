@@ -21,12 +21,20 @@ class MainActivity : AppCompatActivity() {
 
         val model = ViewModelProviders.of(this).get(AlbumsViewModel::class.java)
         model.state.observe(this, Observer { handleState(it!!) })
+        model.action.observe(this, Observer { it?.let(this::handleAction) })
 
         activity_main_swipe_layout.setOnRefreshListener(model::fetchAlbums)
 
         activity_main_albums_list.layoutManager = LinearLayoutManager(this)
-        adapter = AlbumsAdapter()
+        adapter = AlbumsAdapter(onAlbumClicked = model::onAlbumClicked)
         activity_main_albums_list.adapter = adapter
+    }
+
+    private fun handleAction(action: AlbumsViewModel.Action) = when (action) {
+        is AlbumsViewModel.Action.SwitchToAlbumDetailScreen -> {
+            val intent = AlbumDetailActivity.getIntent(this, action.albumId)
+            startActivity(intent)
+        }
     }
 
     private fun handleState(state: AlbumsViewModel.State): Unit = when (state) {

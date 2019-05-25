@@ -1,6 +1,7 @@
 package com.github.gibbrich.albums.di
 
 import android.app.Application
+import com.github.gibbrich.albums.di.component.AlbumComponent
 import com.github.gibbrich.albums.di.component.AlbumsComponent
 import com.github.gibbrich.albums.di.component.AppComponent
 import com.github.gibbrich.albums.di.component.DaggerAppComponent
@@ -20,5 +21,13 @@ class ComponentManager(private val context: Application) {
             .build()
     }
 
+    private val internalAlbumComponent: AlbumComponent by lazy {
+        internalAppComponent
+            .albumBuilder()
+            .build()
+    }
+
     fun albumsComponent(): AlbumsComponent = internalAlbumsComponent
+
+    fun albumComponent(): AlbumComponent = internalAlbumComponent
 }

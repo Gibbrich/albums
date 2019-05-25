@@ -12,6 +12,7 @@ import javax.inject.Inject
 
 class AlbumsViewModel: ViewModel() {
     val state = MutableLiveData<State>()
+    val action = MutableLiveData<Action>()
     private var disposables = CompositeDisposable()
 
     @Inject
@@ -46,6 +47,10 @@ class AlbumsViewModel: ViewModel() {
         }
     }
 
+    fun onAlbumClicked(albumId: Long) {
+        action.value = Action.SwitchToAlbumDetailScreen(albumId)
+    }
+
     private fun handle(albums: List<Album>) {
         state.value = State.Loaded(albums)
     }
@@ -59,5 +64,9 @@ class AlbumsViewModel: ViewModel() {
         object Loading: State()
         object Empty: State()
         data class Loaded(val albums: List<Album>): State()
+    }
+
+    sealed class Action {
+        data class SwitchToAlbumDetailScreen(val albumId: Long): Action()
     }
 }
